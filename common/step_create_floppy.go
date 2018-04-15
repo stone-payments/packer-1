@@ -70,7 +70,7 @@ func (s *StepCreateFloppy) Run(_ context.Context, state multistep.StateBag) mult
 	log.Println("Formatting the block device with a FAT filesystem...")
 	formatConfig := &fat.SuperFloppyConfig{
 		FATType: fat.FAT12,
-		Label:   "packer",
+		Label:   "OEMDRV",
 		OEMName: "packer",
 	}
 	if err := fat.FormatSuperFloppy(device, formatConfig); err != nil {
